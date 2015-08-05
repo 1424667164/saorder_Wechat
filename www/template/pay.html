@@ -1,0 +1,46 @@
+<div class="modal">
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary bar-dark">
+        <h1 class="title">支付</h1>
+        <!--button class="button button-clear" ng-click="cancel()">取消</button-->
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+        <div class="pay-form">支付方式:</div>
+        <div class="list">
+            <label class="item item-radio pay-item">
+                <input type="radio" name="group" checked ng-click="payChanged(1)">
+                <p class="item-content">
+                    <img src="img/alipay.jpg">
+                    <span>支付宝</span>
+                </p>
+                <i class="radio-icon ion-ios-circle-filled"></i>
+            </label>
+            <label class="item item-radio pay-item">
+                <input type="radio" name="group" ng-click="payChanged(2)">
+                <p class="item-content">
+                    <img src="img/weichat.jpg">
+                    <span>微支付</span>
+                </p>
+                <i class="radio-icon ion-ios-circle-filled"></i>
+            </label>
+            <label class="item item-radio pay-item">
+                <input type="radio" name="group" ng-click="payChanged(3)">
+                <p class="item-content">
+                    <img src="img/cashpay.png">
+                    <span>现金</span>
+                </p>
+                <i class="radio-icon ion-ios-circle-filled"></i>
+            </label>
+        </div>
+        <p class="pay-tips">
+            {{payTips}}
+        </p>
+        <div class="padding">
+            <button type="submit" class="button button-block button-balanced"
+                    ng-click="pay()"
+                    >{{submitTitle}}</button>
+        </div>
+    </ion-content>
+</div>

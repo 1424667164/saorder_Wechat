@@ -1,0 +1,75 @@
+
+<ion-view>
+    <ion-nav-title>
+        <h1 class="view-title" once-text="category.name"></h1>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-ios-list-outline"
+           href="#/event/orders">
+        </a>
+    </ion-nav-buttons>
+    <ion-content class="dishes" scroll="true" scrollbar-y="true" delegate-handle="dish-main">
+        <form class="item-input-inset search-div" name="searchForm" id="searchForm">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input id="searchBar" name="searchInput" type="search" placeholder="精确打击" ng-model="searchText.value"
+                      ng-change="searchChanged()" ng-blur="searchEnd()" ng-focus="onFocus(this)">
+            </label>
+        </form>
+        <div class="list search-result">
+            <div class="item" ng-repeat="item in searchResult" ng-click="touchResult(item)">
+                {{item.name}}
+            </div>
+        </div>
+        
+        <div class="list">
+            <div collection-repeat="dish in dishes" collection-item-width="'100%'"
+                  class="dish-item" id="{{'dish'+$index}}">
+                <a class="item item-borderless dish" href="#/event/detail({id: {{$index}}})" ><!--lazy-container lazy-src="{{dish.imgurl}}"-->
+                    <img src="{{dish.imgurl}}"  class="dish-img" img-lazy style="height: {{dish.height}}px">
+                    <div class="dish-intro">
+                        <p>
+                            <strong ng-bind="dish.name"></strong>
+                            <span ng-bind="dish.description"></span>
+                        </p>
+                        <span class="dish-price">¥{{dish.price}}</span>
+                    </div>
+                </a>
+                <div class="thumbnail-bottom-btn" ng-controller="DishBtnCtrl">
+                    <a class="btn-like" href="javascript:" ng-click="liked(dish);" role="button">
+                        <div class="btn-level-1">
+                            <div class="btn-level-2"> <i class="ion-ios-heart"
+                                                         style="color:{{dish.liked?'red':'white'}}"></i></div>
+                            <div class="thumbnail-btn-text">{{dish.likes}}</div>
+                        </div>
+                    </a>
+                    <a class="btn-order" href="javascript:">
+                        <div class="btn-level-1">
+                            <!--div class="btn-level-2"> <i class="{{dish.ordered?'ion-ios-minus':'ion-ios-plus-outline'}}"
+                                                         style="color:{{dish.ordered?'deepskyblue':'white'}}"></i></div-->
+                            <div class="btn-level-2-left" ng-click="disorder(dish);" role="button"> <i class="ion-ios-minus-outline"></i></div>                        
+                            <div class="thumbnail-btn-text">{{dish.orders}}</div>
+                            <div class="btn-level-2-right" ng-click="order(dish);" role="button"> <i class="ion-ios-plus"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <ion-infinite-scroll  ng-show="false"
+                immediate-check="false"
+                spinner="circles"
+                on-infinite="doRefresh()"
+                distance="1%" style="height: 0"
+                >
+
+        </ion-infinite-scroll>
+        <div class="row load-more-icon"  ng-show="shouldShowInfinite">
+            <div class="col col-45"></div>
+            <div class="col  col-10"><ion-spinner icon="lines"></ion-spinner></div>
+            <div class="col col-45"></div>
+        </div>
+        <h5 class="last-tips" ng-hide="shouldShowInfinite" ng-bind="dishTips"></h5>
+
+    </ion-content>
+</ion-view>

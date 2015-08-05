@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-nav-title>
+        <h1 class="view-title">{{restaurant.name}}</h1>
+    </ion-nav-title>
+    <ion-content scroll="true">
+        <div class="detail-img-box">
+            <img src="{{restaurant.img}}" class="dish-img detail-img" img-lazy>
+        </div>
+        <div class="dish-detail">
+            <h4 once-text="restaurant.name"></h4>
+            <p once-text="restaurant.type" class="detail-headtext restaurant-type"></p>
+            <p class="detail-headtext restaurant-address"><span>{{restaurant.address}}</span><i class="ion-ios-location-outline"></i></p>
+            <p class="restaurant-description" style="margin-top: 10px"><strong>店训:</strong> {{restaurant.recommend}}</p>
+            <p class="restaurant-description"><strong>介绍:</strong> {{restaurant.description}}</p>
+            <p class="restaurant-contact" style="margin-top: 5px">
+                <strong>电话:</strong> {{restaurant.phone}}
+            </p>
+            <p class="restaurant-contact">
+                <strong>e-mail:</strong> {{restaurant.email}}
+            </p>
+        </div>
+    </ion-content>
+</ion-view>

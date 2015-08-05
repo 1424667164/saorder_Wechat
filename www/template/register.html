@@ -1,0 +1,33 @@
+
+<div style="background-color: black" ng-controller="UserCtrl">
+    <div class="default-title">
+        <!--button class="button icon ion-navicon"></button-->
+        <h3>用户注册</h3>
+        <!--button-- class="button">Edit</--button-->
+    </div>
+
+    <div class="register-content">
+
+        <form class="register-form" name="register" novalidate>
+            <div class="row input-row">
+                <label class="col-25">用户名:</label>
+                <input name="name" class="col-75" type="tel" placeholder="手机号"
+                       phone user-unique ng-model="user.name" required autofocus>
+            </div>
+            <div class="row input-row">
+                <label class="col-25">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                <input name="password" class="col-75" type="password" placeholder="8-20位数字或字符"
+                       maxlength="20" minlength="8" required ng-model="user.password">
+            </div>
+        </form>
+        <div class="register-result" ng-if="register.name.$dirty&&register.name.$error.phone">用户名不合法</div>
+        <div class="register-result" ng-if="register.name.$dirty&&register.name.$error.userUnique">用户名已经被注册</div>
+        <div class="register-result" ng-if="register.password.$dirty&&register.password.$invalid">密码必须食8-20位字符</div>
+        <br>
+        <button class="btn-register" ng-disabled="register.$invalid"
+                ng-click="doRegister()">注册</button>
+        <br>
+        <br>
+        <a class="btn-tologin" style="color: white" ng-click="toLogin()">已注册?</a>
+    </div>
+</div>

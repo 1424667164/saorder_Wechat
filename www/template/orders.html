@@ -1,0 +1,43 @@
+
+<ion-view>
+    <ion-nav-title>
+        <h1 class="view-title">我的菜单</h1>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-clear"
+           ng-click="submitOrder()">提交
+        </a>
+    </ion-nav-buttons>
+    <ion-content scroll="true" scrollbar-y="true">
+        <div class="submit-tips" ng-if="submitTips != ''">
+            {{submitTips}}
+        </div>
+        <ion-list>
+            <div class="item order-item" collection-repeat="order in orders">
+                <h2>{{order.name}}</h2>
+                <p><strong>¥{{order.price}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;{{getType(order.type)}}</p>
+                <div class="order-btns">
+                    <!--i id="minus" class="icon ion-ios-minus-outline" ng-click="delete(order)"></i>
+                    <i id="plus" class="icon ion-ios-plus-outline" ng-click="add(order,$index)"></i-->
+                    <i class="icon ion-ios-close-empty"></i>
+                    <span>{{order.orders}}</span>
+                </div>
+            </div>
+        </ion-list>
+        <div class="submit-total" ng-if="orders.length && submitTips == ''">
+            总计:{{totalCash|number:2}}
+        </div>
+    </ion-content>
+</ion-view>
+
+<script id="template/paySuccess.html" type="text/ng-template">
+    <div class="modal pay-transparent">
+        <div>支付完成，厨师正在为您烹制菜品！</div>
+    </div>
+</script>
+
+<script id="template/orderConfirm.html" type="text/ng-template">
+    <div class="modal pay-transparent">
+        <div>支付完成，厨师正在为您烹制菜品！</div>
+    </div>
+</script>

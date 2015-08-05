@@ -1,0 +1,31 @@
+
+<div style="background-color: black" ng-controller="UserCtrl">
+    <div class="default-title">
+        <!--button class="button icon ion-navicon"></button-->
+        <h3>用户登陆</h3>
+        <!--button-- class="button">Edit</--button-->
+    </div>
+
+    <div class="register-content">
+        <div class="register-result" ng-if="login_result != undefined">{{login_result}}</div>
+        <form class="login-form" name="login">
+            <div class="row input-row">
+                <label class="col-25">用户名:</label>
+                <input name="name" class="col-75" type="tel" placeholder="手机号"
+                        ng-model="user.name" required autofocus>
+            </div>
+            <div class="row input-row">
+                <label class="col-25">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                <input name="password" class="col-75" type="password" placeholder="8-20位数字或字符"
+                       ng-model="user.password" required>
+            </div>
+        </form>
+
+        <br>
+        <button class="btn-register"
+                ng-click="doLogin()">登陆</button>
+        <br>
+        <br>
+        <a class="btn-tologin" style="color: white" ng-click="toRegister()">还未注册?</a>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<ion-view>
+    <ion-nav-title>
+        <h1 class="view-title">个人中心</h1>
+    </ion-nav-title>
+    <ion-content scroll="true" class="personal-content">
+        <ion-item class="item-avatar" ng-click="setAccount()">
+            <img src="img/loading.gif">
+            <h2>{{user.name}}&nbsp;</h2>
+            <p>账号: {{user.username}}</p>
+        </ion-item>
+
+        <ion-item style="background-color: #d1d3d6;"></ion-item>
+
+        <ion-item class="item item-icon-left item-icon-right" ui-sref="eventmenu.myorder">
+            <i class="icon ion-ios-list-outline"></i>
+            我的订单
+            <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+        <ion-item class="item item-icon-left item-icon-right">
+            <i class="icon ion-ios-star-outline"></i>
+            我的收藏
+            <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+        <ion-item style="background-color: #d1d3d6"></ion-item>
+
+        <ion-item class="item item-icon-left item-icon-right">
+            <i class="icon ion-ios-gear-outline"></i>
+            其他设置
+            <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+    </ion-content>
+</ion-view>

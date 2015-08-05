@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above <link href="css/ionic.app.css"
+    rel="stylesheet">
+    -->
+    <script type="text/javascript">
+      /*
+      (function() {
+        WgateJs = {};
+        WgateJs.auto_auth=true;
+        WgateJs.gate_options={force:1,info:"basic"};
+        WgateJs.ready=function(){
+          var wgateid=WgateJs.getWgateid();
+          WgateJs.getWgateUser(function(user){window.localStorage.user = JSON.stringify(user);});
+        };
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://st.weixingate.com/";
+        u=u+'st/1227';
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+        g.defer=true; g.async=true; g.src=u; s.parentNode.insertBefore(g,s);
+      })();
+      */
+    </script>
+    
+    
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    -->
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="cordova.js"></script>
+    -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-once/once.js"></script>
+    <!-- <script src="lib/ng-remote-validate/release/ngRemoteValidate.js"></script>
+    <!-- your app's js -->
+    <script src="js/services.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/directive.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/API/md5.js"></script>
+    <script src="js/API/me-lazyload.js"></script>
+    <script src="js/API/me-lazyimg.js"></script>
+    -->
+  </head>
+  
+  <body ng-controller="MainCtrl">
+    <ion-nav-view></ion-nav-view>
+  </body>
+
+</html>

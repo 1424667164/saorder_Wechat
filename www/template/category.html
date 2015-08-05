@@ -1,0 +1,40 @@
+
+<ion-view>
+    <ion-nav-title>
+        <h1 class="view-title" once-text="restaurant"></h1>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-ios-list-outline"
+           href="#/event/orders">
+        </a>
+    </ion-nav-buttons>
+    <ion-content class="categories" scroll="true" scrollbar-y="true">
+
+        <ion-slide-box auto-play="true" does-continue="true" ng-show="true">
+            <ion-slide class="ad-slider" ng-repeat="ad in ads" ng-click="adClicked($index)" >
+                <img class="ad-image" once-src="ad.img" >
+                <div class="ad-text">
+                    <h4 style="color:#fff" once-text="ad.name"></h4>
+                    <p once-text="ad.description"></p>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <div class="list">
+            <div collection-repeat="category in categories" collection-item-width="'100%'"
+                 class="category-item">
+                <a class="item item-borderless category" href="#/event/dishes({id: {{$index}}})">
+                    <img src="{{category.imgurl}}" class="category-img" img-lazy>
+                    <div class="category-intro">
+                        <p>
+                            <strong ng-bind="category.name"></strong>
+                            <span ng-bind="category.description"></span>
+                        </p>
+                        <span class="category-orders">{{category.orders}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h5 class="last-tips" style="padding-bottom: 25px;margin-top: -12px;">～～只有这么多了～～</h5>
+    </ion-content>
+</ion-view>

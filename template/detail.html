@@ -1,0 +1,23 @@
+<ion-view
+    <ion-nav-title>
+        <h1 class="view-title" once-text="dish.name"></h1>
+    </ion-nav-title>
+    <ion-content scroll="true" class="detail-content">
+        <div class="detail-img-box">
+            <img class="dish-img detail-img {{imgactive}}" img-lazy once-src="dish.imgurl">
+        </div>
+        <div class="dish-detail">
+            <p class="detail-header">
+                <span once-text="dish.name" class="detail-name"></span>
+                <!--div class="detail-btns" ng-controller="DishBtnCtrl">
+                    <button class="detail-btn-order">点上</button>
+                    <button class="detail-btn-order">结算</button>
+                </div-->
+                <span once-text="restaurant" class="detail-headtext"></span>
+                <span once-text="getType(dish.type)" class="detail-headtext"></span>
+            </p>
+            <p once-text="dish.detail" class="detail-detail"></p>
+        </div>
+
+    </ion-content>
+</ion-view>
